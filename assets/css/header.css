@@ -1,0 +1,458 @@
+.header {
+    height: 120px;
+    background-image: linear-gradient(0, #ecbd09, #fac809);
+}
+/* Header nav bar CSS*/
+.nav-bar {
+    margin-top: 10px;
+    width: 100%;
+    display: inline-flex;
+    justify-content: space-between;
+}
+
+.nav-bar-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 4px 0 0 0;
+    display: flex;
+}
+
+
+.nav-bar-item{
+    display: flex;
+    margin: 0 8px;
+    position: relative;
+}
+
+.nav-bar-user {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.nav-bar-user__img {
+    width: 21px;
+    height: 21px;
+    border-radius: 50%;
+}
+
+.nav-bar-user__name {
+    margin-left: 4px;
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+
+.nav-bar-user__menu {
+    position: absolute;
+    z-index: 1;
+    padding-left: 0;
+    top: 150%;
+    right: 0;
+    background-color: var(--white-color);
+    width: 160px;
+    border-radius: 2px;
+    list-style: none;
+    box-shadow: 0 1px 2px #ccc;
+    display: none;
+}
+
+.nav-bar-user__menu::before {
+    content: "";
+    position: absolute;
+    right: 27px;
+    top: -29px;
+    border-width: 15px;
+    border-style: solid;
+    border-color: transparent transparent var(--white-color) transparent;
+} 
+
+.nav-bar-user__item a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 1.4rem;
+    padding: 8px 16px;
+    display: block;
+}
+
+.nav-bar-user__item a:first-child {
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+}
+
+.nav-bar-user__item a:last-child {
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+}
+
+.nav-bar-user__item a:hover {
+    background-color: #fafafa;
+}
+
+.nav-bar-user__item--red a {
+    color: red;
+}
+
+.nav-bar-user:hover .nav-bar-user__menu {
+    display: block;
+    transform-origin: calc(100% - 20px) top;
+    animation: growth linear 0.2s;
+}
+
+.nav-bar-item__cursor {
+    cursor: pointer;
+}
+
+/*Header QR Code*/
+.nav-bar_QR {
+    width: 186px;
+    background-color: var(--white-color);
+    position: absolute;
+    left: 0;
+    top: 140%;
+    padding: 8px;
+    border-radius: 2px;
+    display: none;
+    animation: fadeIn linear 0.3s;
+    z-index: 1;
+}
+
+.nav-bar_QR::before {
+    width: 100%;
+    left: 0;
+    height: 10%;
+    position: absolute;
+    content: "";
+    top: -16px;
+    display: block;
+}
+
+.QR-code{
+    width: 100%;
+}
+
+.nav-bar_apps{
+    display: flex;
+    justify-content: space-between;
+}
+
+.QR-link:nth-child(1) {
+    margin-left: 11px;
+}
+
+.QR-link:nth-child(2) {
+    margin-right: 11px;
+}
+
+.app_code{
+    height: 16px;
+}
+
+/*Header nav bar right */
+.nav-bar-item--hover_qr:hover .nav-bar_QR {
+    display: block;
+}
+
+.nav-bar-item,
+.navbar-item-link {
+    display: inline-flex;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 400;
+    color: #255810;
+    text-decoration: none;
+}
+
+.navbar-item-link:hover{
+    color: rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+.navbar-item-link:nth-child(2) {
+    margin-left: 5px;
+}
+
+.nav-bar-item--seperate:after {
+    content: "";
+    display: block;
+    position: absolute;
+    border-left: 1px solid #255810;
+    height: 14px;
+    right: -7px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.nav-bar-item--bold {
+    font-weight: 600;
+}
+
+.nav-bar-item--nope {
+    color: #255810;
+    cursor: text;
+}
+
+.navbar-item-link__icon {
+    margin-left: 8px;
+}
+
+.navbar-item-link__icon:hover {
+    color: rgba(0, 0, 0, 0.3);
+}
+
+.nav-bar__notify-icon {
+    margin-right: 5px;
+}
+
+.far {
+    margin-right: 5px;
+}
+
+/*Header Logo*/
+.header-with-search {
+    height: 92px;
+    display: flex;
+    align-items: center;
+    margin: 0 8px;
+}
+
+.header__logo {
+    height: 92px;
+    width: 200px;
+}
+
+.header-logo__img {
+    height: 95px;
+    width: 150px;
+    margin: 0 10px;
+}
+
+/*Header Search*/
+.header__search {
+    flex: 1;
+    height: 40px;
+    background-color: var(--white-color);
+    display: flex;
+    align-items: center;
+}
+
+.header__search-input-wrap {
+    flex: 1;
+    height: 100%;
+    position: relative;
+}
+
+.header__search-input {
+    border: none;
+    outline: none;
+    width: 100%;
+    height: 100%;
+    font-size: 1.5rem;
+    color: var(--text-color);
+    padding: 0 16px;
+    border-radius: 3px;
+}
+
+/*Nhấn chuột để hiện ra lịch sử, ~ là select hết tất cả phần tử kế bên nó*/
+.header__search-input:focus ~ .header__search-history {
+    display: block;
+}
+
+/*Header Search History*/
+.header__search-history {
+    position: absolute;
+    left: 0;
+    top: 110%;
+    width: calc(100% - 16px);
+    background-color: var(--white-color);
+    border-radius: 3px;
+    box-shadow: 0 1px 5px #c5c5c5;
+    display: none;
+    z-index: 2;
+}
+
+.header__search-history-heading {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #b2b2b2;
+    padding: 9px 13px;
+    cursor: default;
+}
+
+.header__search-history-list {
+    list-style: none;
+    padding: 0;
+}
+
+.header__search-history-item {
+    padding: 9px 13px;
+    text-decoration: none;
+}
+
+.header__search-history-item a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 1.4rem;
+}
+
+.header__search-history-item:hover {
+    width: 100%;
+    background-color: #eaeaea;
+    cursor: pointer;
+    
+}
+
+.header__search-select {
+    border-left: 2px solid #e8e8e8;
+    padding-left: 16px;
+    position: relative;
+    cursor: pointer;
+}
+
+.header__search-select-label {
+    font-size: 1.4rem;
+    color: var(--text-color);
+}
+.header__search-select-icon {
+    font-size: 1.4rem;
+    color: #4a4a4a;
+    padding: 0 16px 0 10px;
+    position: relative;
+    top: 1px;
+}
+
+.header__search-select-icon:hover {
+    color: #ecbd09;
+}
+
+.header__search-btn {
+    background-color: #ecbd09;
+    border: none;
+    outline: none;
+    height: 34px;
+    width: 60px;
+    border-radius: 3px;
+    padding-right: 12px;
+    margin-right: 3px;
+}
+.header__search-icon {
+    font-size: 1.4rem;
+    color: var(--white-color);
+    position: relative;
+    left: 3px;
+}
+
+.header__search-btn:hover {
+    cursor: pointer;
+    background-color: #f2d770;
+}
+
+.header__search-option {
+    position: absolute;
+    right: 0;
+    top: 180%;
+    padding: 0;
+    list-style: none;
+    width: 140px;
+    box-shadow: 0 1px 2px #ccc;
+    border-radius: 3px;
+    display: none;
+    z-index: 1;
+}
+
+.header__search-option::before {
+    content: "";
+    display: block;
+    background-color: transparent;
+    width: 100%;
+    height: 20px;
+    position: absolute;
+    top: -20px;
+}
+
+.header__search-option-item {
+    background-color: var(--white-color);
+    padding: 8px;
+    text-align: right;
+    cursor: pointer;
+}
+
+.header__search-option-item:first-child {
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+
+.header__search-option-item:last-child {
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+.header__search-option-item:hover {
+    background-color: #fafafa;
+}
+
+.header__search-option-item span {
+    font-size: 1.4rem;
+    color: var(--text-color);
+}
+
+.header__search-option-item i {
+    font-size: 1.2rem;
+    color: #ecbd09;
+    margin: 0 12px 0 8px;
+}
+
+.header__search-select:hover .header__search-option {
+    display: block;
+}
+
+.header__cart {
+    width: 150px;
+    text-align: center;
+}
+
+.header__cart-wrap {
+    position: relative;
+    display: inline-block;
+}
+
+
+.header__cart--icon {
+    color: #255810;
+    font-size: 2.6rem;
+    margin-top: 3px;
+    cursor: pointer;
+}
+
+
+.header__cart-notice {
+    position: absolute;
+    top: -6px;
+    right: -4px;
+    padding: 1px 6px;
+    background-color: var(--white-color);
+    color: #ecbd09;
+    font-size: 1.4rem;
+    line-height: 1.4rem;
+    border-radius: 10px;
+    border: 2px solid #d1b030;
+    cursor: pointer;
+}
+
+.home-banner {
+    width: 1270px;
+    margin: auto;
+    padding-top: 8px;
+    padding-left: 15px;
+    padding-right: 15px;
+    display: flex;
+}
+
+.nav-bar-item a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.nav-bar-item a:hover {
+    color: var(--text-color);
+}

@@ -1,0 +1,55 @@
+.title-add {
+    text-align: center;
+    color: #666;
+    text-shadow: 1px 1px 0px #fff;
+    margin-top: 50px;
+}
+
+.form-add {
+    border-radius: 5px;
+    width: 350px;
+    margin: 40px auto;
+    background-color: #FFFFFF;
+    font-size: 1.6rem;
+    overflow: hidden;
+}
+
+.form_group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.btn-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+input {
+    margin-left: 10px;
+}
+
+#btn_add {
+    background-color: var(--primary-color);
+    color: #FFF;
+    text-align: center;
+    border: 0;
+    padding: 17px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#btn_change-pass {
+    margin-left: 40px;
+    background-color: rgb(240, 240, 240);
+    color: var(--primary-color);
+    text-align: center;
+    border: 0;
+    padding: 17px 25px;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgb(0 0 0 / 20%);
+    cursor: pointer;
+    text-decoration: none;
+}
